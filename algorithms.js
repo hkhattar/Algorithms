@@ -55,8 +55,51 @@ evenOdd(array);
 
 
 
+//BUBBLE SORT
+function bubbleSort(a)
+{
+	for(var i=0; i<a.length-1; i++)
+	{
+		var flag = 0;
+		for(var j=0; j<a.length-i-1; j++)
+		{
+			if (a[j] > a[j+1])
+			{
+				var temp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
+				flag++
+			}
+		}
 
-//quicksort
+		if (flag == 0) // exit out of function if it is already ordered 
+		{
+			break;
+		}
+	}
+	console.log('array',a)
+}
+
+arr = []//initialize array
+console.log(Math.floor(Math.random() * 99)) // random number between 0 to 99
+
+//generate array of length thousand by using for loop
+for(var i=0; i<1000; i++)
+{
+	arr.push(i); // if we push i, it will be ordered array but if we push random number calculated above then it will be unordered array
+}
+
+console.log(arr)// array of length 1000
+
+var t0 = performance.now();
+bubbleSort(arr); //call the bubble sort to make it ordered
+var t1 = performance.now();
+console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+
+
+
+
+//QUICK SORT
 function swap(items, firstIndex, secondIndex){
     var temp = items[firstIndex];
     items[firstIndex] = items[secondIndex];
@@ -116,15 +159,11 @@ function quickSort(items, left, right) {
 }
 
 // first call
+var items = [4,2,6,5,3,9]
+console.log('items', items)
 var result = quickSort(items);
 
 console.log('result',result)
-
-
-
-
-
-
 
 
 
@@ -186,8 +225,7 @@ console.log('result',result)
 
 // }
 
-var items = [4,2,6,5,3,9]
-console.log('items', items)
+
 // partition(items);
 
 // function quickSort(items,left,right)
