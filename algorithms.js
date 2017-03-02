@@ -168,6 +168,41 @@ console.log('result',result)
 
 
 
+//DUTCH FLAG PARTITION
+function dutchFlagPartition(items,x) {
+
+    left = typeof left != "number" ? 0 : left;
+    right = typeof right != "number" ? items.length - 1 : right;
+
+        var pivot = items[x]
+        i       = left,
+        j       = right;
+
+        console.log('left',left)
+    while (i <= j) {
+
+        while (items[i] < pivot) {
+            i++;
+        }
+
+        while (items[j] > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            swap(items, i, j);
+            i++;
+            j--;
+        }
+    }
+    console.log('items after algorithm', items)
+
+    return items;
+}
+
+var items = [4,2,6,5,3,9]
+console.log('items dutch', items)
+dutchFlagPartition(items, 5) 
 
 
 
