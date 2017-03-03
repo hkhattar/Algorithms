@@ -214,8 +214,30 @@ console.log('items dutch', items)
 dutchFlagPartition(items, 3) 
 
 
+//PLUS ONE
 
+function plusOne(a)
+{
+	a[a.length-1] = a[a.length-1] +1;
 
+	for(var i = a.length -1; i>0 && a[i]==10; i--)
+	{
+		a[i] = 0;
+		a[i-1]++
+	}
+
+	if(a[0]==10)
+	{
+		a[0]=0;
+		a.unshift(1)
+	}
+
+	console.log('a',a)
+	return a;
+}
+
+var a = [9,9,9]
+plusOne(a)
 
 
 
