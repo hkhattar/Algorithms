@@ -168,44 +168,113 @@ console.log('result',result)
 
 
 
+
+
+
+
+
 //DUTCH FLAG PARTITION
 function dutchFlagPartition(items,x) {
 
-    left = typeof left != "number" ? 0 : left;
-    right = typeof right != "number" ? items.length - 1 : right;
+    smaller = typeof smaller != "number" ? 0 : smaller;
+    equal = typeof equal != "number" ? 0 : equal;
+
+    larger = typeof larger != "number" ? items.length  : larger;
 
         var pivot = items[x]
-        i       = left,
-        j       = right;
+        i       = equal,
+        j       = smaller,
+        k		=larger;
 
-        console.log('left',left)
-    while (i <= j) {
 
-        while (items[i] < pivot) {
-            i++;
-        }
+        console.log('smaller',smaller)
+        console.log('equal',equal)
 
-        while (items[j] > pivot) {
-            j--;
-        }
+    while (equal < larger) {
 
-        if (i <= j) {
-            swap(items, i, j);
-            i++;
-            j--;
-        }
+       if (items[equal] < pivot){
+       	swap(items,smaller++,equal++)
+       }
+       else if(items[equal] == pivot){
+       	++equal;
+       	        console.log('equal',equal)
+
+       }
+       else {
+       	swap(items,equal,--larger)
+       }
     }
     console.log('items after algorithm', items)
 
     return items;
 }
 
-var items = [4,2,6,5,3,9]
+var items = [7,2,6,5,3,5,8,9,4,5,2,4,1,9,3,5]
 console.log('items dutch', items)
-dutchFlagPartition(items, 5) 
+dutchFlagPartition(items, 3) 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DUTCH FLAG PARTITION
+// function dutchFlagPartition(items,x) {
+
+//     left = typeof left != "number" ? 0 : left;
+//     right = typeof right != "number" ? items.length - 1 : right;
+
+//         var pivot = items[x]
+//         i       = left,
+//         j       = right;
+
+//         console.log('left',left)
+//     while (i <= j) {
+
+//         while (items[i] < pivot) {
+//             i++;
+//         }
+
+//         while (items[j] > pivot) {
+//             j--;
+//         }
+
+//         if (i <= j) {
+//             swap(items, i, j);
+//             i++;
+//             j--;
+//         }
+//     }
+//     console.log('items after algorithm', items)
+
+//     return items;
+// }
+
+// var items = [5,2,6,5,3,5]
+// console.log('items dutch', items)
+// dutchFlagPartition(items, 3) 
+
+//quick sort
 
 
 // function swap(items, firstIndex, secondIndex){
