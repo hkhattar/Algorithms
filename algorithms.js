@@ -237,23 +237,97 @@ function plusOne(a)
 }
 
 var a = [9,9,9]
+
 plusOne(a)
 
 
 
 
+//Multiply two arbitrary-precision integers
+var result = []
+console.log('result',result)
+function multiply(num1,num2)
+{
+	var sign ;
+	if((num1[0] < 0 && num2[0] > 0 ) ||  (num1[0] > 0 && num2[0] < 0 ))
+	{
+		
+		sign = -1
+	}
+	else
+	{
+		sign = 1
+	}
+	num1[0] = Math.abs(num1[0])
+	num2[0] = Math.abs(num2[0])
+
+	
+
+	for(var i=num1.length -1; i>=0; --i)
+	{	
+		console.log('result',result)
+
+		for(var j=num2.length-1; j>=0; --j)
+		{
+			
+			console.log(i,j)
+			
+			if (isNaN(result[i+j+1] ) )
+			{
+				result[i+j+1] = 0
+
+			}
+			
+			console.log('result[i+j+1]',result[i+j+1])
+			result[i+j+1] =  result[i+j+1] + num1[i] * num2[j]
+			 
+			console.log('result[i+j+1]',result[i+j+1])
+			result[i+j] = result[i+j] + result[i+j+1]/10
+			result[i+j+1] =  result[i+j+1]%10
+			console.log('result[i+j+1]',result[i+j+1])
+		}
+	}
+	
+
+	console.log('result',result)
+	return result
+	
+}
+
+
+num1 = [1,2]
+num2 = [7]
+
+multiply(num1,num2);
 
 
 
+//palindrome
 
+function palindrome(str)
+{
+	var x=str.length-1
+	var bool = false;
+	for(var i=0; i<x; i++)
+	{
 
+		if (str[i] == str[x-i])
+		{
+			bool = true	
+		}
+		
+		else 
+		{
+			bool = false
+			console.log(bool)
+			return false	
+		}
+	}
+	console.log(bool)
+}
 
-
-
-
-
-
-
+var str = 'wpkjoobllboopw'
+palindrome(str);
 
 
 
