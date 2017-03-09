@@ -329,9 +329,17 @@ function palindrome(str)
 var str = 'wpkjoobllboopw'
 palindrome(str);
 
+//intToString
+function intToString(int)
+{
+	var s;
+	var a=int%10
+	s = '0' + (int-a)/10;
+	s = s+int%10
+	console.log(s)
+}
 
-
-
+intToString(000987)
 
 
 //DUTCH FLAG PARTITION
