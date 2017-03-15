@@ -337,9 +337,50 @@ function intToString(int)
 	s = '0' + (int-a)/10;
 	s = s+int%10
 	console.log(s)
+	console.log(typeof(s))
 }
 
 intToString(000987)
+
+//stringToInt
+function stringToInt(s)
+{
+	var x=0;
+	for(var i=0; i<1; i++)
+	{
+		x=s[i]
+	}
+	for(var i=1; i<s.length; i++)
+	{
+		x = x*10 
+		x = x + s[i]*1
+	}
+	console.log(x)
+}
+
+stringToInt('2346574')
+
+//stringToInt
+// function stringToInt(string)
+// {
+// 	var x=0;
+// 	for(var i=0; i<string.length; i++)
+// 	{
+// 		for(var j=100; j>1; j=j/10)
+// 		{
+// 			console.log(i,'i')
+// 			console.log(x,'x')
+// 			console.log(j,'j')
+// 			x = x + string[i]*j
+// 			console.log(x,'x after' )
+
+// 		}
+		
+// 	}
+// 	console.log(x)
+// }
+
+
 
 
 //DUTCH FLAG PARTITION
