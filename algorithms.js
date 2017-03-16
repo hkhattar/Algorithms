@@ -393,29 +393,62 @@ function binaryIndexOf(list,searchElement)
 {
 	var minIndex = 0
 	var maxIndex = list.length-1
+	var result = -1
 	var currentIndex 
 	var currentElement 
 
 	while (minIndex <= maxIndex)
 	{
+		console.log('while start')
 		currentIndex = Math.floor((minIndex+maxIndex) / 2)
+		console.log('currentIndex',currentIndex)
+
 		currentElement = list[currentIndex]
+		console.log('currentElement',currentElement)
+
 
 		if (searchElement > currentElement)
 		{
+			console.log('inside first if search elent if greater')
 			minIndex = currentIndex+1;
+			console.log('minIndex',minIndex)
+			console.log('maxIndex',maxIndex)
+			console.log('currentIndex',currentIndex)
+			console.log('result',result)
+			console.log('currentElement',currentElement)
+			console.log('searchElement',searchElement)
+
+		}
+		else if (searchElement == currentElement)
+		{   console.log('inside second if')
+
+			result = currentIndex
+			maxIndex = currentIndex-1
+			console.log('minIndex',minIndex)
+			console.log('maxIndex',maxIndex)
+			console.log('currentIndex',currentIndex)
+			console.log('result',result)
+			console.log('currentElement',currentElement)
+			console.log('searchElement',searchElement)
 		}
 		else if (searchElement < currentElement)
 		{
+			console.log('inside third if')
 			maxIndex = currentIndex-1;
+			console.log('minIndex',minIndex)
+			console.log('maxIndex',maxIndex)
+			console.log('currentIndex',currentIndex)
+			console.log('result',result)
+			console.log('currentElement',currentElement)
+			console.log('searchElement',searchElement)
 		}
-		else if (searchElement == currentElement)
-		{return currentIndex;}
+		
 	}
-	return -1
+	console.log('exit while')
+	return result
 }
 
-var index = binaryIndexOf([3,4,5,7,9,10,23,45,78,90],23)
+var index = binaryIndexOf([2,3,3,23,23,23,23,23,23,23],23)
 console.log('index',index)
 
 //stringToInt
