@@ -365,35 +365,58 @@ stringToInt('2346574')
 function input(arr)
 {
 	var amount = 0
-	// var newarr = []
 	for(var i=0; i<arr.length-1; i++)
 	{
-		// amount = arr[i][1]
-		// newarr.push([arr[i][0],amount,arr[i][2]])	
-
 		for(var j=i+1; j<arr.length; j++)
 		{
-			// amount = arr[i][1]
 			if ((arr[i][0] == arr[j][0]) && (arr[i][2] == arr[j][2]))
 			{
 				arr[i][1] = arr[i][1] + arr[j][1]
 				arr.splice(j, 1)
-				// amount = amount + arr[j][1]
-				// newarr.push([arr[i][0],amount,arr[i][2]])	
-
 			}
-
-		}
-			
-
+		}		
 	}
-	// newarr.push([arr[arr.length-1][0],arr[arr.length-1][1],arr[arr.length-1][2]])
-	// console.log(newarr,'newarr')
+	
 	console.log(arr,'arr')
 }
 
-arr= [['abc',25,'jan'],['xyz',25,'jan'],['xyz',25,'feb'],['abc',25,'jan'],['fgh',25,'jan'],['fgh',25,'jan'],['abc',25,'feb'],['abc',25,'feb'],['abc',25,'mar'],['fgh',25,'feb'],['fgh',25,'mar'],['xyz',25,'mar'],['xyz',25,'feb']]
+arr= [['abc',25,'jan 16'],['xyz',25,'jan'],['xyz',25,'feb'],['abc',25,'jan 17'],['fgh',25,'jan'],['fgh',25,'jan'],['abc',25,'feb'],['abc',25,'feb'],['abc',25,'mar'],['fgh',25,'feb'],['fgh',25,'mar'],['xyz',25,'mar'],['xyz',25,'feb']]
 input(arr)
+
+
+
+//Searching
+//Searching JavaScript arrays with a binary search
+//binary search 
+
+function binaryIndexOf(list,searchElement)
+{
+	var minIndex = 0
+	var maxIndex = list.length-1
+	var currentIndex 
+	var currentElement 
+
+	while (minIndex <= maxIndex)
+	{
+		currentIndex = Math.floor((minIndex+maxIndex) / 2)
+		currentElement = list[currentIndex]
+
+		if (searchElement > currentElement)
+		{
+			minIndex = currentIndex+1;
+		}
+		else if (searchElement < currentElement)
+		{
+			maxIndex = currentIndex-1;
+		}
+		else if (searchElement == currentElement)
+		{return currentIndex;}
+	}
+	return -1
+}
+
+var index = binaryIndexOf([3,4,5,7,9,10,23,45,78,90],23)
+console.log('index',index)
 
 //stringToInt
 // function stringToInt(string)
