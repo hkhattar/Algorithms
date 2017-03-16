@@ -360,6 +360,41 @@ function stringToInt(s)
 
 stringToInt('2346574')
 
+//Mohammed puzzle
+
+function input(arr)
+{
+	var amount = 0
+	// var newarr = []
+	for(var i=0; i<arr.length-1; i++)
+	{
+		// amount = arr[i][1]
+		// newarr.push([arr[i][0],amount,arr[i][2]])	
+
+		for(var j=i+1; j<arr.length; j++)
+		{
+			// amount = arr[i][1]
+			if ((arr[i][0] == arr[j][0]) && (arr[i][2] == arr[j][2]))
+			{
+				arr[i][1] = arr[i][1] + arr[j][1]
+				arr.splice(j, 1)
+				// amount = amount + arr[j][1]
+				// newarr.push([arr[i][0],amount,arr[i][2]])	
+
+			}
+
+		}
+			
+
+	}
+	// newarr.push([arr[arr.length-1][0],arr[arr.length-1][1],arr[arr.length-1][2]])
+	// console.log(newarr,'newarr')
+	console.log(arr,'arr')
+}
+
+arr= [['abc',25,'jan'],['xyz',25,'jan'],['xyz',25,'feb'],['abc',25,'jan'],['fgh',25,'jan'],['fgh',25,'jan'],['abc',25,'feb'],['abc',25,'feb'],['abc',25,'mar'],['fgh',25,'feb'],['fgh',25,'mar'],['xyz',25,'mar'],['xyz',25,'feb']]
+input(arr)
+
 //stringToInt
 // function stringToInt(string)
 // {
