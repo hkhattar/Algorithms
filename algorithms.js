@@ -473,6 +473,39 @@ function binarySearchEntryEqualToItsIndex(array)
 var array = [-2,0,2,3,6,7,9]
 binarySearchEntryEqualToItsIndex(array)
 
+//search a cyclically sorted array
+
+function searchSmallest(array)
+{
+	var left=0
+	var right=array.length-1
+
+	while(left<right)
+	{
+		console.log('while start')
+		var mid= Math.floor(left+((right-left)/2))
+		if(array[mid]>array[right])
+		{
+			left=mid+1
+		}
+		else if (array[mid]==array[right])
+		{
+			console.log('right',right)
+
+			return right
+		}
+		else
+		{
+			right=mid
+		}
+	}
+	console.log('left',left)
+	return left
+}
+
+var array = [378,478,550,631,103,203,220,234,279,368]
+searchSmallest(array);
+
 //stringToInt
 // function stringToInt(string)
 // {
