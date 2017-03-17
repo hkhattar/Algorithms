@@ -506,6 +506,53 @@ function searchSmallest(array)
 var array = [378,478,550,631,103,203,220,234,279,368]
 searchSmallest(array);
 
+
+//brute force- square root
+function squareRoot(number)
+{
+	for(var i=0; i<number; i++)
+	{
+		if ((number >= i*i) &&(number < (i+1)*(i+1)) )
+		{
+			console.log(i,'i')
+			return i;
+		}
+	}
+}
+
+var number = 465897
+squareRoot(number)
+
+//binary search- compute the integer square root
+function binarySearchSquareRoot(number)
+{
+	var left=0
+	var right=number
+
+	while(left<=right)
+	{
+		var mid = Math.floor(left+((right-left)/2))
+
+		if (mid*mid>number)
+		{
+			right = mid-1
+		}
+		else if(mid*mid < number)
+		{
+			left = mid+1
+		}
+		else if (mid*mid == number)
+		{
+			console.log(mid,'mid')
+			return left
+		}
+	}
+	console.log('left-1',left-1)
+}
+
+var number = 37
+binarySearchSquareRoot(number)
+
 //stringToInt
 // function stringToInt(string)
 // {
