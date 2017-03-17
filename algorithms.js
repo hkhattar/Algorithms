@@ -593,6 +593,32 @@ b=[5,5,6,8,8,9,10,10]
 
 interSectTwoSortedArray(a,b)
 
+//14.2 merge two sorted arrays
+
+function mergeTwoSortedArrays(A,m,B,n)//A and B are the arrays and m and n are number of entries initially in the first and second array respectively
+{
+	var a = m-1
+	var b = n-1
+	var write_idx = m+n-1
+
+	while(a>=0 && b>=0)
+	{
+		A[write_idx--] = A[a]>B[b]? A[a--] : B[b--]
+	}
+
+	while(b>=0)
+	{
+		A[write_idx--] = B[b--]
+	}
+
+	console.log('A',A)
+}
+
+A= [5,13,17]
+B=[3,7,11,19]
+m=A.length
+n=B.length
+mergeTwoSortedArrays(A,m,B,n);
 
 //if elements on x and y index are equal then push the element in newarray and increment both x and y
 //if element on x index in smaller, incrememt x
