@@ -387,6 +387,7 @@ input(arr)
 
 //Searching
 //Searching JavaScript arrays with a binary search
+//search a sorted array for first occurence of k
 //binary search 
 
 function binaryIndexOf(list,searchElement)
@@ -399,57 +400,78 @@ function binaryIndexOf(list,searchElement)
 
 	while (minIndex <= maxIndex)
 	{
-		console.log('while start')
 		currentIndex = Math.floor((minIndex+maxIndex) / 2)
-		console.log('currentIndex',currentIndex)
-
 		currentElement = list[currentIndex]
-		console.log('currentElement',currentElement)
-
-
+		
 		if (searchElement > currentElement)
 		{
-			console.log('inside first if search elent if greater')
 			minIndex = currentIndex+1;
-			console.log('minIndex',minIndex)
-			console.log('maxIndex',maxIndex)
-			console.log('currentIndex',currentIndex)
-			console.log('result',result)
-			console.log('currentElement',currentElement)
-			console.log('searchElement',searchElement)
-
 		}
 		else if (searchElement == currentElement)
-		{   console.log('inside second if')
-
+		{   
 			result = currentIndex
 			maxIndex = currentIndex-1
-			console.log('minIndex',minIndex)
-			console.log('maxIndex',maxIndex)
-			console.log('currentIndex',currentIndex)
-			console.log('result',result)
-			console.log('currentElement',currentElement)
-			console.log('searchElement',searchElement)
+			
 		}
 		else if (searchElement < currentElement)
 		{
-			console.log('inside third if')
 			maxIndex = currentIndex-1;
-			console.log('minIndex',minIndex)
-			console.log('maxIndex',maxIndex)
-			console.log('currentIndex',currentIndex)
-			console.log('result',result)
-			console.log('currentElement',currentElement)
-			console.log('searchElement',searchElement)
 		}
 		
 	}
-	console.log('exit while')
 	return result
 }
 
 var index = binaryIndexOf([2,3,3,23,23,23,23,23,23,23],23)
 console.log('index',index)
+
+//search a sorted array for entry equal to its index
+//brute force approach
+function searchEntryEqualTosItsIndex(array)
+{
+	for (var i=0; i<array.length; i++)
+	{
+		if (array[i]==i)
+		{
+			console.log('i',i)
+			return i
+		}
+	}
+}
+
+var array = [-2,0,2,3,6,7,9]
+searchEntryEqualTosItsIndex(array);
+
+// search a sorted array for entry equal to its index
+// binary search tree
+function binarySearchEntryEqualToItsIndex(array)
+{
+	var left=0;
+	var right = array.length-1
+	while(left<=right)
+	{
+		var mid = left + ((right-left)/2);
+		var difference = array[mid] - mid;
+
+		if(difference==0)
+		{
+			console.log(mid,'mid')
+			return mid
+		}
+		else if (difference > 0)
+		{
+			right = mid-1
+		}
+		else 
+		{
+			left = mid+1
+		}
+	}
+	return -1;
+}
+
+var array = [-2,0,2,3,6,7,9]
+binarySearchEntryEqualToItsIndex(array)
 
 //stringToInt
 // function stringToInt(string)
