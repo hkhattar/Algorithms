@@ -553,6 +553,58 @@ function binarySearchSquareRoot(number)
 var number = 37
 binarySearchSquareRoot(number)
 
+//14.1 compute intersection of two sorted arrays
+
+
+function interSectTwoSortedArray(a,b)
+{
+	var x=0, y=0, ret =[] //initialize x=0, y=0 and newarray called ret
+
+	while(x<a.length && y < b.length) //loop through both the arrays
+	{
+		if (a[x] == b[y])
+		{
+			if (a[x-1]!=a[x])
+			{
+				ret.push(a[x]);
+			}
+			
+			x++;
+			y++;
+		}
+
+		else if (a[x]>b[y])
+		{
+			y++;
+		}
+
+		else if (a[x]< b[y])
+		{
+			x++;
+		}
+	}
+
+	console.log('ret',ret)
+	return ret;
+}
+
+var a=[2,3,3,5,5,6,7,7,8,12],
+b=[5,5,6,8,8,9,10,10]
+
+interSectTwoSortedArray(a,b)
+
+
+//if elements on x and y index are equal then push the element in newarray and increment both x and y
+//if element on x index in smaller, incrememt x
+//if element on y index is smaller, incrment y
+
+
+
+
+
+
+
+
 //stringToInt
 // function stringToInt(string)
 // {
