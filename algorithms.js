@@ -562,7 +562,7 @@ function interSectTwoSortedArray(a,b)
 
 	while(x<a.length && y < b.length) //loop through both the arrays
 	{
-		if (a[x] == b[y])
+		if (a[x] == b[y])//if elements on x and y index are equal then push the element in newarray and increment both x and y
 		{
 			if (a[x-1]!=a[x])
 			{
@@ -573,12 +573,12 @@ function interSectTwoSortedArray(a,b)
 			y++;
 		}
 
-		else if (a[x]>b[y])
+		else if (a[x]>b[y])//if element on y index is smaller, incrment y
 		{
 			y++;
 		}
 
-		else if (a[x]< b[y])
+		else if (a[x]< b[y])//if element on x index in smaller, incrememt x
 		{
 			x++;
 		}
@@ -620,13 +620,25 @@ m=A.length
 n=B.length
 mergeTwoSortedArrays(A,m,B,n);
 
-//if elements on x and y index are equal then push the element in newarray and increment both x and y
-//if element on x index in smaller, incrememt x
-//if element on y index is smaller, incrment y
+//14.3 Remove first name duplicates
 
+function remove_duplicates_safe(arr) {
+    var seen = {};
+    var ret_arr = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (!(arr[i].split(',')[0] in seen)) {
+            ret_arr.push(arr[i]);
+            seen[arr[i].split(',')[0]] = true;
+        }
+    }
+    console.log('return',ret_arr)
+    return ret_arr;
 
+}
 
-
+var arr = ['Ian,Botham','David, Gower','Ian,Bell','Ian,Chappel']
+remove_duplicates_safe(arr)
+//output - ['Ian,Botham','David, Gower']
 
 
 
