@@ -1,10 +1,10 @@
-//print 0 to 10
+//1.print 0 to 10
 for(var i=0;i<10;i++)
 {
 	console.log(i)
 }
 
-//swap function
+//2.swap function
 function swap(a,b)
 {
 	var temp = a;
@@ -24,7 +24,7 @@ swap(a,b);
 array = [2,8,7,4,3,5]
 array = [6,4,9,3,8,7]
 
-//reorder the array so that even entries appear first, solve it without allocating additional storage
+//3.reorder the array so that even entries appear first, solve it without allocating additional storage
 function evenOdd(array)
 {
 	console.log(array)
@@ -55,7 +55,7 @@ evenOdd(array);
 
 
 
-//BUBBLE SORT
+//4.BUBBLE SORT
 function bubbleSort(a)
 {
 	for(var i=0; i<a.length-1; i++)
@@ -99,7 +99,7 @@ console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
 
 
 
-//QUICK SORT
+//5.QUICK SORT
 function swap(items, firstIndex, secondIndex){
     var temp = items[firstIndex];
     items[firstIndex] = items[secondIndex];
@@ -173,7 +173,7 @@ console.log('result',result)
 
 
 
-//DUTCH FLAG PARTITION
+//6.DUTCH FLAG PARTITION
 function dutchFlagPartition(items,x) {
 
     smaller = typeof smaller != "number" ? 0 : smaller;
@@ -214,7 +214,7 @@ console.log('items dutch', items)
 dutchFlagPartition(items, 3) 
 
 
-//PLUS ONE
+//7.PLUS ONE
 
 function plusOne(a)
 {
@@ -243,7 +243,7 @@ plusOne(a)
 
 
 
-//Multiply two arbitrary-precision integers
+//8.Multiply two arbitrary-precision integers
 var result = []
 console.log('result',result)
 function multiply(num1,num2)
@@ -302,7 +302,7 @@ multiply(num1,num2);
 
 
 
-//palindrome
+//9.palindrome
 
 function palindrome(str)
 {
@@ -329,7 +329,7 @@ function palindrome(str)
 var str = 'wpkjoobllboopw'
 palindrome(str);
 
-//intToString
+//10.intToString
 function intToString(int)
 {
 	var s;
@@ -342,7 +342,7 @@ function intToString(int)
 
 intToString(000987)
 
-//stringToInt
+//11.stringToInt
 function stringToInt(s)
 {
 	var x=0;
@@ -360,7 +360,7 @@ function stringToInt(s)
 
 stringToInt('2346574')
 
-//Mohammed puzzle
+//12.Mohammed puzzle
 
 function input(arr)
 {
@@ -385,7 +385,7 @@ input(arr)
 
 
 
-//Searching
+//13.Searching
 //Searching JavaScript arrays with a binary search
 //search a sorted array for first occurence of k
 //binary search 
@@ -425,7 +425,7 @@ function binaryIndexOf(list,searchElement)
 var index = binaryIndexOf([2,3,3,23,23,23,23,23,23,23],23)
 console.log('index',index)
 
-//search a sorted array for entry equal to its index
+//14.search a sorted array for entry equal to its index
 //brute force approach
 function searchEntryEqualTosItsIndex(array)
 {
@@ -442,7 +442,7 @@ function searchEntryEqualTosItsIndex(array)
 var array = [-2,0,2,3,6,7,9]
 searchEntryEqualTosItsIndex(array);
 
-// search a sorted array for entry equal to its index
+// 15.search a sorted array for entry equal to its index
 // binary search tree
 function binarySearchEntryEqualToItsIndex(array)
 {
@@ -473,7 +473,7 @@ function binarySearchEntryEqualToItsIndex(array)
 var array = [-2,0,2,3,6,7,9]
 binarySearchEntryEqualToItsIndex(array)
 
-//search a cyclically sorted array
+//16.search a cyclically sorted array
 
 function searchSmallest(array)
 {
@@ -507,7 +507,7 @@ var array = [378,478,550,631,103,203,220,234,279,368]
 searchSmallest(array);
 
 
-//brute force- square root
+//17.brute force- square root
 function squareRoot(number)
 {
 	for(var i=0; i<number; i++)
@@ -523,7 +523,7 @@ function squareRoot(number)
 var number = 465897
 squareRoot(number)
 
-//binary search- compute the integer square root
+//18.binary search- compute the integer square root
 function binarySearchSquareRoot(number)
 {
 	var left=0
@@ -553,7 +553,7 @@ function binarySearchSquareRoot(number)
 var number = 37
 binarySearchSquareRoot(number)
 
-//14.1 compute intersection of two sorted arrays
+//19)14.1 compute intersection of two sorted arrays
 
 
 function interSectTwoSortedArray(a,b)
@@ -593,7 +593,7 @@ b=[5,5,6,8,8,9,10,10]
 
 interSectTwoSortedArray(a,b)
 
-//14.2 merge two sorted arrays
+//20)14.2 merge two sorted arrays
 
 function mergeTwoSortedArrays(A,m,B,n)//A and B are the arrays and m and n are number of entries initially in the first and second array respectively
 {
@@ -620,7 +620,7 @@ m=A.length
 n=B.length
 mergeTwoSortedArrays(A,m,B,n);
 
-//14.3 Remove first name duplicates
+//21)14.3 Remove first name duplicates
 
 function remove_duplicates_safe(arr) {
     var seen = {};
@@ -640,7 +640,7 @@ var arr = ['Ian,Botham','David, Gower','Ian,Bell','Ian,Chappel']
 remove_duplicates_safe(arr)
 //output - ['Ian,Botham','David, Gower']
 
-//5.8 reverse digits
+//22)5.8 reverse digits
 function reverse (x)
 {
 	var result = 0
@@ -662,6 +662,34 @@ var x = 1123;
 console.log('x',x)
 var r =reverse (x);
 console.log('r',r)
+
+//23) 5.9 check if a decimal integer is a palindrome
+function isPalindromeNumber(x)
+{
+	console.log('start function')
+	if (x<0)
+	{
+		return false;
+	}
+	var num_digits = x.toString().length;//to find total number of digits in that number
+	var msd_mask = Math.pow(10,num_digits-1)
+	for(var i=0; i<num_digits/2; i++)
+	{
+		if(Math.floor(x/msd_mask) != x%10)
+		{
+			return false
+		}
+		x = x%msd_mask
+		x = Math.floor(x/10)
+		msd_mask = Math.floor(msd_mask/100)
+	}
+
+	return true;
+}
+
+var x = 8923443298
+var bool=isPalindromeNumber(x)
+console.log('bool',bool)
 
 
 //stringToInt
