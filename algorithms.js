@@ -640,7 +640,28 @@ var arr = ['Ian,Botham','David, Gower','Ian,Bell','Ian,Chappel']
 remove_duplicates_safe(arr)
 //output - ['Ian,Botham','David, Gower']
 
+//5.8 reverse digits
+function reverse (x)
+{
+	var result = 0
+	var x_remaining = x
+	// var x_remaining = abs(x)
+	while(x_remaining)
+	{
+		console.log('inside while')
+		console.log('before x_remaining',x_remaining)
+		result = result*10 + x_remaining%10
+		console.log('result',result)
+		x_remaining = Math.floor(x_remaining/10)
+		console.log('after x_remaining',x_remaining)
+	}
+	return x < 0? -result:result
 
+}
+var x = 1123;
+console.log('x',x)
+var r =reverse (x);
+console.log('r',r)
 
 
 //stringToInt
