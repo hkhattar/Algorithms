@@ -691,6 +691,107 @@ var x = 8923443298
 var bool=isPalindromeNumber(x)
 console.log('bool',bool)
 
+//LINKED LIST- merge two sorted list
+function Node(data) {
+    this.data = data;
+    this.next = null;
+}
+
+function SinglyList() {
+    this._length = 0;
+    this.head = null;
+    this.add = function (value){
+    	var newNode = new Node(value)
+    	var currentNode = this.head
+    	if (!currentNode)
+    	{
+    		this.head = newNode
+    		this._length++
+    		return newNode
+    	}
+    	while (currentNode.next)
+    	{
+    		currentNode = currentNode.next
+    	}
+    	currentNode.next = newNode
+    	this._length++
+    	return newNode
+    }
+
+}
+
+
+// console.log('L1',L1)
+// console.log('L2',L2)
+
+function mergeTwoList(L1,L2)
+{
+	console.log('inside mergeTwoList')
+	console.log('L1',L1)
+	console.log('L2',L2)
+
+	if(L1==null){return L2}
+	if (L2==null){return L1}
+	var currentNode = new Node
+	if (L1.head.data < L2.head.data)
+	{
+		console.log('inside if')
+		currentNode = L1.head
+		console.log('currentNode',currentNode)
+	}
+	else
+	{
+		console.log('inside else')
+		var temp = L2
+		L2 = L1
+		L1 = temp
+		currentNode = L1.head
+	}
+	while(currentNode.next)
+	{
+		console.log('inside while')
+		console.log('currentNode',currentNode)
+		console.log('L2.head.data',L2.head.data)
+		console.log('currentNode.next.data',currentNode.next.data)
+		if(currentNode.next.data > L2.head.data)
+		{
+			console.log('if currentNode.next is greater than l2.head.data',currentNode.next.data,'>',L2.head.data)
+			var temp = new Node
+			temp = currentNode.next
+			// L1=L2
+			currentNode.next = L2.head
+			L2.head = temp
+			console.log('currentNode',currentNode)
+			console.log('L2',L2)
+		}
+		currentNode = currentNode.next
+		console.log('currentNode',currentNode)
+
+	}
+	console.log('currentNode',currentNode)
+	if(currentNode.next == null)
+	{
+		currentNode.next = L2.head
+		return L1
+	}
+
+	
+
+}
+
+var L1 = new SinglyList;
+L1.add(3)
+L1.add(5)
+L1.add(7)
+var L2 = new SinglyList;
+L2.add(2)
+L2.add(11)
+console.log('L1',L1)
+console.log('L2',L2)
+var output = mergeTwoList(L1,L2)
+console.log('output',output)
+
+
 
 //stringToInt
 // function stringToInt(string)
