@@ -691,7 +691,7 @@ var x = 8923443298
 var bool=isPalindromeNumber(x)
 console.log('bool',bool)
 
-//LINKED LIST- merge two sorted list
+//24)LINKED LIST- 8.1 merge two sorted list
 function Node(data) {
     this.data = data;
     this.next = null;
@@ -790,6 +790,80 @@ console.log('L1',L1)
 console.log('L2',L2)
 var output = mergeTwoList(L1,L2)
 console.log('output',output)
+
+
+
+//25)Reverse a singly linked list
+function reverseList(linkedList)
+{
+	var previous = null
+	var current = linkedList.head
+	var next 
+	while(current)
+	{
+		next = current.next
+		current.next = previous
+		previous = current
+		current = next
+	}
+	linkedList.head = previous
+	console.log('linkedList',linkedList)
+	return linkedList
+
+}
+
+var linkedList = new SinglyList;
+linkedList.add(1)
+linkedList.add(2)
+linkedList.add(3)
+linkedList.add(4)
+linkedList.add(5)
+
+reverseList(linkedList)
+
+//26) 8.2 reverse a single sublist
+
+//reverse a linked list
+// function reverseList(linkedList)
+// {
+// 	var previous = linkedList.head
+// 	var current = linkedList.head.next
+// 	var next = linkedList.head.next.next
+// 	console.log('previous',previous)
+// 	console.log('current',current)
+// 	console.log('next',next)
+
+// 	while(next.next!=null)
+// 	{
+// 		console.log('inside while next.next exists')
+// 		console.log('next.next',next.next)
+// 		console.log('linkedList.head',linkedList.head)
+// 		linkedList.head.next = current.next
+// 		console.log('current.next before 3',current.next)
+// 		current.next = previous
+// 		console.log('current.next after 1',current.next)
+// 		console.log('current.next 1',current.next)
+// 		console.log('linkedList.head',linkedList.head)
+// 		console.log('previous before',previous)
+// 		previous = current
+// 		console.log('previous after',previous)
+// 		console.log('current before',current)
+// 		current = next
+// 		console.log('current after',current)
+// 		console.log('next before',next)
+// 		next = next.next
+// 		console.log('next after', next)
+// 	}
+// 	console.log('current',current)
+// 	console.log('*************')
+// 	// next.next = current
+// 	// linkedList.head = next
+// 	// console.log('linkedList.head',linkedList.head)
+// 	// return linkedList.head
+
+// }
+
+
 
 
 
