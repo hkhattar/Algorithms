@@ -732,7 +732,8 @@ function mergeTwoList(L1,L2)
 
 	if(L1==null){return L2}
 	if (L2==null){return L1}
-	var currentNode = new Node
+	var currentNode = new Node;
+
 	if (L1.head.data < L2.head.data)
 	{
 		console.log('inside if')
@@ -821,7 +822,34 @@ linkedList.add(5)
 
 reverseList(linkedList)
 
-//26) 8.2 reverse a single sublist
+//26) 8.6 delete a node from a singly linked list
+//write a program which deletes a node in a singly linked list. The input node is guaranted not to be the tail node
+
+function deleteNode(L1,val)
+{
+	var currentNode = new Node;
+	currentNode = L1.head
+
+	while(currentNode.next.data != val)
+	{
+		currentNode = currentNode.next
+	}
+
+	currentNode.next = currentNode.next.next
+	console.log('L1',L1)
+	return L1
+
+}
+
+
+var linkedList = new SinglyList;
+linkedList.add(1)
+linkedList.add(2)
+linkedList.add(3)
+linkedList.add(4)
+linkedList.add(5)
+
+deleteNode(linkedList,4)
 
 //reverse a linked list
 // function reverseList(linkedList)
