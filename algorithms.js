@@ -920,8 +920,38 @@ linkedList.add(11)
 console.log(')))))))))))))))))))))))')
 removeDuplicates(linkedList)
 
+//29) 6.5 Delete duplicates from sorted arrays
 
+function deleteDuplicates(a)
+{
+	// for(var i=0; i<a.length; i++)
+	var i=0
+	while(i<a.length)
+	{
+		
+		if (a[i] == undefined)
+		{
+			break
+		}
+		if(a[i]==a[i+1])
+		{
+			for(var j=i+1; j<a.length;j++)
+			{
+				a[j]= a[j+1]
+			}
+		}
+		else
+		{
+			i=i+1
+		}
+	}
 
+	console.log('a',a)
+	return a
+}
+
+var a = [2,3,5,5,11,11,11,13]
+deleteDuplicates(a)
 //reverse a linked list
 // function reverseList(linkedList)
 // {
