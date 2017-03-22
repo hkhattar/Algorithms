@@ -836,6 +836,7 @@ function deleteNode(L1,val)
 	}
 
 	currentNode.next = currentNode.next.next
+	L1._length--
 	console.log('L1',L1)
 	return L1
 
@@ -851,6 +852,35 @@ linkedList.add(5)
 
 deleteNode(linkedList,4)
 
+
+//27) delete the last node from the linked list
+
+function pop(L1)
+{
+	var current = new Node;
+	current = L1.head;
+	var previous 
+
+	while(current.next)
+	{
+		previous = current;
+		current = current.next
+	}
+
+	previous.next = null;
+	L1._length--
+	console.log('L1',L1)
+	return L1
+}
+
+var linkedList = new SinglyList;
+linkedList.add(1)
+linkedList.add(2)
+linkedList.add(3)
+linkedList.add(4)
+linkedList.add(5)
+
+pop(linkedList)
 //reverse a linked list
 // function reverseList(linkedList)
 // {
