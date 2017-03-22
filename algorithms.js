@@ -853,7 +853,7 @@ linkedList.add(5)
 deleteNode(linkedList,4)
 
 
-//27) delete the last node from the linked list
+//27) 8.7 delete the last node from the linked list
 
 function pop(L1)
 {
@@ -881,6 +881,47 @@ linkedList.add(4)
 linkedList.add(5)
 
 pop(linkedList)
+
+//28) 8.8 remove duplicates from the sorted list
+function removeDuplicates(L1)
+{
+	var current = new Node;
+	current = L1.head
+	console.log('current before while',current)
+
+	while(current.next!=null)
+	{
+		console.log('inside while')
+		console.log('current',current)
+		if (current.data == current.next.data)
+		{
+			current.next = current.next.next
+			L1._length--
+		}
+		else
+		{
+			current = current.next
+		}
+		
+	}
+	console.log('L1',L1)
+	return L1
+}
+
+var linkedList = new SinglyList;
+linkedList.add(2)
+linkedList.add(2)
+linkedList.add(3)
+linkedList.add(5)
+linkedList.add(7)
+linkedList.add(11)
+linkedList.add(11)
+
+console.log(')))))))))))))))))))))))')
+removeDuplicates(linkedList)
+
+
+
 //reverse a linked list
 // function reverseList(linkedList)
 // {
