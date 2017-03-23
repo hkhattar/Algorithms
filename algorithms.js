@@ -953,7 +953,7 @@ function deleteDuplicates(a)
 var a = [2,3,5,5,11,11,11,13]
 deleteDuplicates(a)
 
-//6.6 buy and sell stock once
+//30) 6.6 buy and sell stock once
 // write a program that takes an array denoting the daily stock price, and returns the maximum profit that could be made by buying and then selling one share of that stock
 
 function buyAndSellStockOnce(a)
@@ -991,7 +991,7 @@ var arr=[310,315,275,295,260,270,290,230,255,250]
 buyAndSellStockOnce(arr)
 
 
-//7.5 Test Palindromicity
+//31) 7.5 Test Palindromicity
 //Implement a function which takes as input a string s and returns true if s is a palindromic string
 
 function isAlphaNumeric(str) {
@@ -1041,6 +1041,75 @@ var string = "A man, a plan, a canal, Panama"
 var bool = isPalindrome(string)
 console.log('bool',bool)
 
+// 8.11 Test whether a singly linked list is palindromic
+
+//32)
+function compareTwoList(L1,L2)
+{
+	var l1 = L1.head;
+	var l2 = L2.head;
+
+	while(l2)
+	{
+		if (l1.data != l2.data)
+		{
+			return false
+		}
+		else 
+		{
+			l1 = l1.next
+			l2 = l2.next
+		}
+	}
+	
+	return true
+}
+
+var linkedList = new SinglyList;
+linkedList.add(1)
+linkedList.add(2)
+linkedList.add(4)
+linkedList.add(4)
+linkedList.add(9)
+
+var linkedList2 = new SinglyList;
+linkedList2.add(1)
+linkedList2.add(2)
+linkedList2.add(4)
+linkedList2.add(4)
+linkedList2.add(9)
+
+console.log(compareTwoList(linkedList,linkedList2))
+
+//33)
+function isLinkedListAPalindrome(linkedList)
+{
+	var temp = JSON.stringify(linkedList); // Serialize L1, remember this can be an expensive operation
+  	var L1 = JSON.parse(temp); // Deserialize L1, remember this can be an expensive operation
+	var L2 = new SinglyList;
+	L2 = reverseList(linkedList)
+	var result = compareTwoList(L1,L2)
+	console.log(result)
+	return result;
+
+	
+}
+
+var linkedList = new SinglyList;
+linkedList.add(1)
+linkedList.add(2)
+linkedList.add(3)
+linkedList.add(4)
+linkedList.add(5)
+
+isLinkedListAPalindrome(linkedList)
+
+var list = new SinglyList;
+list.add(2)
+list.add(4)
+list.add(6)
+
+isLinkedListAPalindrome(list)
 
 //reverse a linked list
 // function reverseList(linkedList)
