@@ -952,6 +952,45 @@ function deleteDuplicates(a)
 
 var a = [2,3,5,5,11,11,11,13]
 deleteDuplicates(a)
+
+//6.6 buy and sell stock once
+// write a program that takes an array denoting the daily stock price, and returns the maximum profit that could be made by buying and then selling one share of that stock
+
+function buyAndSellStockOnce(a)
+{
+	var buy = "don't"
+	var profit = 0
+	var sell;
+
+	for (var i=0;i<a.length;i++)
+	{
+		for (var x=i+1; x<a.length;x++)
+		{
+			if(a[x]-a[i]>profit)
+			{
+				sell = x;
+				profit = a[x]-a[i]
+				buy = i
+			}
+		}
+	}
+
+	var output=[buy,sell,profit]
+	console.log('buy- ',a[buy])
+	console.log('sell-',a[sell])
+	console.log('profit',profit)
+	console.log('output',output)
+	return output
+}
+
+
+var a =[20,22,21,19,20,22,24,18,20]
+buyAndSellStockOnce(a)
+
+var arr=[310,315,275,295,260,270,290,230,255,250]
+buyAndSellStockOnce(arr)
+
+
 //reverse a linked list
 // function reverseList(linkedList)
 // {
