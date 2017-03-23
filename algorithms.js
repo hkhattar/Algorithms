@@ -991,6 +991,57 @@ var arr=[310,315,275,295,260,270,290,230,255,250]
 buyAndSellStockOnce(arr)
 
 
+//7.5 Test Palindromicity
+//Implement a function which takes as input a string s and returns true if s is a palindromic string
+
+function isAlphaNumeric(str) {
+  var code, i, len;
+
+  for (i = 0, len = str.length; i < len; i++) {
+    code = str.charCodeAt(i);
+    if (!(code > 47 && code < 58) && // numeric (0-9)
+        !(code > 64 && code < 91) && // upper alpha (A-Z)
+        !(code > 96 && code < 123)) { // lower alpha (a-z)
+      return false;
+    }
+  }
+  return true;
+};
+
+
+function isPalindrome(s)
+{
+	var i=0;
+	var j=s.length-1
+
+	while(i<j)
+	{
+		while(!isAlphaNumeric(s[i]) && i<j)
+		{
+			i++;
+		}
+
+		while(!isAlphaNumeric(s[j]) && i<j)
+		{
+			j--;
+		}
+
+		if (s[i].toLowerCase()!= s[j].toLowerCase())
+		{
+			return false
+		}
+		i++;
+		j--;
+	}
+
+	return true
+} 
+
+var string = "A man, a plan, a canal, Panama"
+var bool = isPalindrome(string)
+console.log('bool',bool)
+
+
 //reverse a linked list
 // function reverseList(linkedList)
 // {
